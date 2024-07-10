@@ -1,5 +1,6 @@
 const Product = require('../models/productModel');
 
+// Create a new product
 exports.createProduct = async (req, res) => {
   try {
     const product = await Product.create(req.body);
@@ -9,6 +10,7 @@ exports.createProduct = async (req, res) => {
   }
 };
 
+// Get all products
 exports.getProducts = async (req, res) => {
   try {
     const products = await Product.findAll();
@@ -18,6 +20,7 @@ exports.getProducts = async (req, res) => {
   }
 };
 
+// Get a single product by ID
 exports.getProductById = async (req, res) => {
   try {
     const product = await Product.findByPk(req.params.id);
@@ -30,6 +33,7 @@ exports.getProductById = async (req, res) => {
   }
 };
 
+// Update a product by ID
 exports.updateProduct = async (req, res) => {
   try {
     const product = await Product.findByPk(req.params.id);
@@ -43,6 +47,7 @@ exports.updateProduct = async (req, res) => {
   }
 };
 
+// Delete a product by ID
 exports.deleteProduct = async (req, res) => {
   try {
     const product = await Product.findByPk(req.params.id);
@@ -54,4 +59,4 @@ exports.deleteProduct = async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-};
+}; 
