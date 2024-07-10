@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../../config/database');  // Adjust the path to your database config
+const sequelize = require('../../config/database'); // Adjust the path to your database config
 
 const Product = sequelize.define('Product', {
   name: {
@@ -16,6 +16,16 @@ const Product = sequelize.define('Product', {
   image: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
   },
 }, {
   timestamps: true,
