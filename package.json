@@ -1,0 +1,15 @@
+{
+  "name": "mora-jaya-hub",
+  "version": "1.0.0",
+  "description": "Mora Jaya Hub is a platform for managing product orders and customizations.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.5",
+    "body-parser": "^1.19.0"
+  }
+}
