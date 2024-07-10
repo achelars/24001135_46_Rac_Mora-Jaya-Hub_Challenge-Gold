@@ -1,15 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Sequelize } = require('sequelize');
+const sequelize = require('./config/database'); 
 const productRoutes = require('./src/routes/productRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-const sequelize = new Sequelize('mora_jaya_hub', 'mora_user', 'user1234', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
 
 sequelize.authenticate()
   .then(() => {
@@ -26,6 +21,10 @@ app.get('/', (req, res) => {
   res.send('Mora Jaya Hub API');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}).catch(error => {
+  console.error('Unable to sync the database:', error);
 });
