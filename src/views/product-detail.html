@@ -5,62 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Detail</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: #f8f9fa;
-      color: #333;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    }
-    .container {
-      flex: 1;
-    }
-    .navbar {
-      background-color: #1a1a1a;
-    }
-    .navbar-brand, .nav-link {
-      color: #fff !important;
-      font-weight: bold;
-    }
-    .header {
-      background: #1a1a1a;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
-    .card {
-      border: none;
-      border-radius: 0;
-    }
-    .card img {
-      height: 400px;
-      object-fit: cover;
-      border-radius: 0;
-    }
-    .btn-primary {
-      background-color: #4b0082;
-      border-color: #4b0082;
-    }
-    .btn-primary:hover {
-      background-color: #5d3fd3;
-      border-color: #5d3fd3;
-    }
-    .related-products .card img {
-      height: 200px;
-    }
-    footer {
-      background: #1a1a1a;
-      padding: 20px 0;
-      text-align: center;
-      color: #fff;
-    }
-    .btn-group {
-      display: flex;
-      gap: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/product-detail.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -153,65 +98,9 @@
   <footer>
     <p>&copy; 2024 Mora Jaya Hub. All rights reserved.</p>
   </footer>
-  <script>
-    // Example data, replace with actual API call
-    const products = [
-      { id: 1, name: 'Product 1', price: 10.0, description: 'Description 1', image: 'https://via.placeholder.com/400' },
-      { id: 2, name: 'Product 2', price: 20.0, description: 'Description 2', image: 'https://via.placeholder.com/400' },
-      { id: 3, name: 'Product 3', price: 30.0, description: 'Description 3', image: 'https://via.placeholder.com/400' },
-      { id: 4, name: 'Product 4', price: 40.0, description: 'Description 4', image: 'https://via.placeholder.com/400' },
-      { id: 5, name: 'Product 5', price: 50.0, description: 'Description 5', image: 'https://via.placeholder.com/400' },
-      { id: 6, name: 'Product 6', price: 60.0, description: 'Description 6', image: 'https://via.placeholder.com/400' },
-      { id: 7, name: 'Product 7', price: 70.0, description: 'Description 7', image: 'https://via.placeholder.com/400' },
-      { id: 8, name: 'Product 8', price: 80.0, description: 'Description 8', image: 'https://via.placeholder.com/400' },
-      { id: 9, name: 'Product 9', price: 90.0, description: 'Description 9', image: 'https://via.placeholder.com/400' }
-    ];
-
-    function getProductById(id) {
-      return products.find(product => product.id === id);
-    }
-
-    function getRelatedProducts(currentProductId) {
-      return products.filter(product => product.id !== currentProductId).slice(0, 4); // Example logic
-    }
-
-    function loadProductDetails() {
-      const params = new URLSearchParams(window.location.search);
-      const productId = parseInt(params.get('id'));
-      const product = getProductById(productId);
-
-      if (product) {
-        document.getElementById('productName').textContent = product.name;
-        document.getElementById('productDescription').textContent = product.description;
-        document.getElementById('productPrice').textContent = `$${product.price.toFixed(2)}`;
-        document.getElementById('productImage').src = product.image;
-        
-        // Load related products
-        const relatedProducts = getRelatedProducts(productId);
-        const relatedProductsContainer = document.getElementById('relatedProducts');
-        relatedProductsContainer.innerHTML = '';
-        relatedProducts.forEach(product => {
-          const productCard = document.createElement('div');
-          productCard.className = 'col-md-3 mb-4';
-          productCard.innerHTML = `
-            <div class="card">
-              <img src="${product.image}" class="card-img-top" alt="${product.name}">
-              <div class="card-body">
-                <h5 class="card-title">${product.name}</h5>
-                <p class="card-text">$${product.price.toFixed(2)}</p>
-                <a href="product-detail.html?id=${product.id}" class="btn btn-primary">View Details</a>
-              </div>
-            </div>
-          `;
-          relatedProductsContainer.appendChild(productCard);
-        });
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', loadProductDetails);
-  </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJd6jTi0tQgpFWvfwRo+O8H7xMjP5q3FtSk4MXz8yDa9I4X9D" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6VWr3eha3ih5LCZZZMkC2PknZl3Gp2hYtPL1" crossorigin="anonymous"></script>
+  <script src="../js/product-detail.js"></script>
 </body>
 </html>

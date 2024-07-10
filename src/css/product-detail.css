@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .container {
+    flex: 1;
+  }
+  
+  .navbar {
+    background-color: #1a1a1a;
+  }
+  
+  .navbar-brand, .nav-link {
+    color: #fff !important;
+    font-weight: bold;
+  }
+  
+  .header {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 0;
+  }
+  
+  .card img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  
+  .btn-primary {
+    background-color: #4b0082;
+    border-color: #4b0082;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5d3fd3;
+    border-color: #5d3fd3;
+  }
+  
+  .related-products .card img {
+    height: 200px;
+  }
+  
+  footer {
+    background: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 10px;
+  }
+  
