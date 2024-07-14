@@ -21,20 +21,40 @@ body {
 }
 
 .header {
-  background: #1a1a1a;
+  background: url('https://via.placeholder.com/1200x300') no-repeat center center;
+  background-size: cover;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+}
+
+.header h1 {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  font-size: 2rem;
 }
 
 .card {
+  transition: transform 0.2s, box-shadow 0.2s;
   border: none;
   border-radius: 0;
 }
 
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .card img {
-  height: 400px;
+  height: 300px;
   object-fit: cover;
+  border-radius: 0;
+}
+
+.form-control, .btn {
   border-radius: 0;
 }
 
@@ -48,10 +68,6 @@ body {
   border-color: #5d3fd3;
 }
 
-.related-products .card img {
-  height: 200px;
-}
-
 footer {
   background: #1a1a1a;
   padding: 20px 0;
@@ -59,7 +75,12 @@ footer {
   color: #fff;
 }
 
-.btn-group {
-  display: flex;
-  gap: 10px;
+.pagination .page-link {
+  color: #4b0082;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #4b0082;
+  border-color: #4b0082;
+  color: #fff;
 }
