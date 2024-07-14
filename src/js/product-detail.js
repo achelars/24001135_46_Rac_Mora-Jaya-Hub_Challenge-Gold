@@ -1,4 +1,3 @@
-// Example data, replace with actual API call
 const products = [
   { id: 1, name: 'Product 1', price: 10.0, description: 'Description 1', image: 'https://via.placeholder.com/400' },
   { id: 2, name: 'Product 2', price: 20.0, description: 'Description 2', image: 'https://via.placeholder.com/400' },
@@ -30,7 +29,7 @@ function loadProductDetails() {
     document.getElementById('productPrice').textContent = `$${product.price.toFixed(2)}`;
     document.getElementById('productImage').src = product.image;
 
-    // Load related products
+    
     const relatedProducts = getRelatedProducts(productId);
     const relatedProductsContainer = document.getElementById('relatedProducts');
     relatedProductsContainer.innerHTML = '';
