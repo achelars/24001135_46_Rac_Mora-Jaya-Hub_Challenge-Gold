@@ -1,0 +1,22 @@
+{
+  "name": "mora-jaya-hub",
+  "version": "1.0.0",
+  "description": "Mora Jaya Hub is designed to facilitate the operations of your small business, providing a seamless experience for both customers and administrators.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achelars/24001135_46_Rac_Mora-Jaya-Hub_Challenge-Gold.git"
+  },
+  "keywords": [
+    "mora"
+  ],
+  "author": "Rachel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achelars/24001135_46_Rac_Mora-Jaya-Hub_Challenge-Gold/issues"
+  },
+  "homepage": "https://github.com/achelars/24001135_46_Rac_Mora-Jaya-Hub_Challenge-Gold#readme"
+}
